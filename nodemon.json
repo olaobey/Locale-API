@@ -1,0 +1,6 @@
+{
+  "ignore": [".git", "**/tests/**", "**/node_modules/**"],
+  "watch": ["./config/**", "./src/**", "./nodemon.json"],
+  "ext": "js,mjs,cjs,json,ts",
+  "exec": "ts-node -r tsconfig-paths/register server.ts | pino-pretty"
+}
