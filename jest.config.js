@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-export default async () => {
+const getConfig = async () => {
     return {
         preset: 'ts-jest',
         displayName: {
@@ -13,7 +13,10 @@ export default async () => {
         detectOpenHandles: true,
         collectCoverage: true,
         transform: { '^.+\\.tsx?$': 'ts-jest' },
-        globalTeardown: '<rootDir>/src/tests/jest-globals-teardown.ts',
+        setupFiles: ['<rootDir>/src/test/jest-setup.ts'],
+        globalTeardown: '<rootDir>src/test/st-globals-teardown.ts',
         forceExit: true,
     };
 };
+
+module.exports = getConfig;
