@@ -4,7 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import { UserModel } from '@src/models/user.model';
 
-export const generateAPIKey = async (userId: string): Promise<{ maskedKey: string; apiKeyInfo: { apiKey: string; apiKeyExpiration?: Date } }> => {
+export const generateAPIKey = async (
+    userId: string,
+): Promise<{
+    maskedKey: string;
+    apiKeyInfo: { apiKey: string; apiKeyExpiration?: Date | undefined };
+}> => {
     const key = uuidv4().replace(/-/g, '');
     console.log("API key generated (won't be shown again):", key);
 

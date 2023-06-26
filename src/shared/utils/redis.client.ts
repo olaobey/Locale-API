@@ -7,20 +7,21 @@
 import { Redis } from 'ioredis';
 import { promisify } from 'util';
 import cleanEnv from '@config/index';
+import logger from '@shared/utils/logger';
 
 const redisClient: Redis = new Redis({
     host: cleanEnv.REDIS_LOCALHOST,
     port: cleanEnv.REDIS_PORT,
 });
 
-console.log('Connecting to the Redis.........');
+logger.info('Connecting to the Redis.........');
 
 redisClient.on('ready', () => {
-    console.log('Connected!');
+    logger.info('Connected!');
 });
 // Handle Redis error
 redisClient.on('error', (error) => {
-    console.error('Redis error:', error);
+    logger.error('Redis error:', error);
 });
 
 const getAsync = promisify(redisClient.get).bind(redisClient);

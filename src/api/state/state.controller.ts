@@ -10,7 +10,6 @@ import paginate from 'express-paginate';
 import { saveWithTtl, get, del } from '@shared/utils/redis.client';
 
 export const createState = async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req.body);
     const newStateData: IState = req.body;
     if (!newStateData) {
         res.status(400).json({
@@ -34,12 +33,14 @@ export const createState = async (req: Request, res: Response, next: NextFunctio
         await saveWithTtl(cacheKey, newStateData, 300);
         // Save new state information
         const savedState: IState = await newState.save();
+        console.log(savedState);
         res.status(200).json({
             data: savedState,
             message: 'State data is successfully created',
             success: true,
         });
     } catch (error) {
+        console.error('Create State error:', error);
         return next();
     }
 };

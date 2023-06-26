@@ -18,8 +18,8 @@ export const generalError = (
     logger.error(err);
     // res.status(500).json(err);
     if (err instanceof APIError) {
-        res.status(err.status).json({ msg: err.message, status: false, data: err.data });
+        res.status(err.status).json({ msg: err.message, success: false, data: err.data });
     } else {
-        res.status(500).json({ msg: 'Unknown Error Occurred', status: false });
+        res.status(500).json({ msg: 'Unknown Error Occurred', success: false });
     }
 };

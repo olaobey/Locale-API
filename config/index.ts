@@ -28,7 +28,7 @@ export default cleanEnv(process.env, {
     }),
     NODE_ENV: str({
         desc: 'Node environment',
-        default: 'development',
+        default: 'test',
     }),
     PINO_LOG_LEVEL: str({
         desc: 'Log level',

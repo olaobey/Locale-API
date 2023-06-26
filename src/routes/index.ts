@@ -15,6 +15,6 @@ router.use('/profile', profileRouter);
 
 router.use('/region', regionRouter);
 
-router.use('/state', stateRouter);
+router.use('/states', stateRouter);
 
 export default router;

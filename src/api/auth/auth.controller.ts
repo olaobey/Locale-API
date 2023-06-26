@@ -81,7 +81,7 @@ export const signin = async (req: Request, res: Response, next: NextFunction) =>
 
         await foundUser.save();
 
-        res.json({
+        res.status(200).json({
             maskedKey,
             apiKey: apiKeyInfo.apiKey,
             apiKeyExpiration: apiKeyInfo.apiKeyExpiration,
@@ -124,4 +124,3 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
         return next(error);
     }
 };
-``;

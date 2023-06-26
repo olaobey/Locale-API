@@ -6,7 +6,7 @@ import { Document, Schema, Model, model } from 'mongoose';
 
 export interface IRegion extends Document {
     name: string;
-    state: Schema.Types.ObjectId;
+    stateId: Schema.Types.ObjectId;
     location: {
         type: string;
         coordinates: [number, number];
@@ -24,7 +24,7 @@ const RegionSchema: Schema<IRegion> = new Schema(
             required: true,
             unique: true,
         },
-        state: {
+        stateId: {
             type: Schema.Types.ObjectId,
             ref: 'State',
             required: 'Enter a valid state name',

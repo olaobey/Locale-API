@@ -15,10 +15,10 @@ export interface IState extends Document {
         type: string;
         coordinates: number[];
     };
-    lga: Schema.Types.ObjectId;
+    lgaId: Schema.Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
-    senatorial_districts: string[];
+    senatorial_districts?: string[];
     landmass: string;
     dialect: string;
     geo_political_zone: string;
@@ -77,7 +77,7 @@ const StateSchema: Schema<IState> = new Schema(
                 },
             },
         },
-        lga: {
+        lgaId: {
             type: Schema.Types.ObjectId,
             ref: 'Lga',
             required: 'Enter a valid LGA',
