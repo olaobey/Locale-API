@@ -1,9 +1,5 @@
-/* eslint-disable import/newline-after-import */
-/* eslint-disable import/order */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/first */
 /* eslint-disable indent */
-const http = require('http');
+import http from 'http';
 import app from '@src/app';
 import logger from '@shared/utils/logger';
 import { connectDB } from '@shared/utils/db';
