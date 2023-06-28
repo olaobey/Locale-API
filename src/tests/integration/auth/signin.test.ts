@@ -1,13 +1,14 @@
+/* eslint-disable import/extensions */
 /* eslint-disable prefer-const */
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 /* eslint-disable import/no-extraneous-dependencies */
 import request from 'supertest';
-import app from '@src/app';
-import { connectToDatabase } from '@src/tests/jest.setup';
-import closeDatabase from '@src/tests/jest.teardown';
-import { generateAPIKey } from '@src/service/apiKey.service';
-import { UserModel } from '@models/user.model'; // Assuming the UserModel import path is correct
+import app from '../../../app';
+import { connectToDatabase } from '../../jest.setup';
+import closeDatabase from '../../jest.teardown';
+import { generateAPIKey } from '../../../service/apiKey.service';
+import { UserModel } from '../../../models/user.model'; // Assuming the UserModel import path is correct
 
 // Define the type for the auth object
 interface Auth {

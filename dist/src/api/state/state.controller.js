@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteState = exports.getStateById = exports.getAllStates = exports.updateState = exports.createState = void 0;
-const state_model_1 = require("@models/state.model");
+const state_model_1 = require("../../models/state.model");
 const express_paginate_1 = __importDefault(require("express-paginate"));
-const redis_client_1 = require("@shared/utils/redis.client");
+const redis_client_1 = require("../../shared/utils/redis.client");
 const createState = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const newStateData = req.body;
     if (!newStateData) {

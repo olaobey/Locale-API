@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable import/extensions */
 /* eslint-disable object-shorthand */
 /* eslint-disable consistent-return */
 /* eslint-disable indent */
@@ -14,7 +15,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.authenticateUser = void 0;
-const user_model_1 = require("@src/models/user.model");
+const user_model_1 = require("../../models/user.model");
 const authenticateUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const apiKey = req.headers['x-api-key'];
     if (!apiKey) {

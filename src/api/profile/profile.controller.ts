@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/newline-after-import */
 /* eslint-disable no-console */
@@ -5,8 +6,8 @@
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 import { Request, Response, NextFunction } from 'express';
-import { UserModel, IUser } from '@src/models/user.model';
-import { saveWithTtl, get, del } from '@shared/utils/redis.client';
+import { UserModel, IUser } from '../../models/user.model';
+import { saveWithTtl, get, del } from '../../shared/utils/redis.client';
 export const updateProfile = async (req: Request, res: Response, next: NextFunction) => {
     const userId: string = req.params.id;
     if (!userId) {

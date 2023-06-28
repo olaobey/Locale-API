@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteLga = exports.getLgaById = exports.updateLga = exports.getAllLgas = exports.createLga = void 0;
-const local_model_1 = require("@models/local.model");
+const local_model_1 = require("../../models/local.model");
 const express_paginate_1 = __importDefault(require("express-paginate"));
-const redis_client_1 = require("@shared/utils/redis.client");
+const redis_client_1 = require("../../shared/utils/redis.client");
 const createLga = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const lgaData = req.body;
     // Confirm data

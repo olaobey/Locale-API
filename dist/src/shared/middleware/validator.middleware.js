@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validate = void 0;
 const zod_1 = require("zod");
-const errors_1 = __importDefault(require("@shared/utils/errors"));
+const errors_1 = __importDefault(require("../../shared/utils/errors"));
 const validate = (schema, _in) => {
     return (req, _res, next) => {
         try {

@@ -1,9 +1,12 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 import { Router } from 'express';
-import { createRegion, getAllRegions, getRegionById, updateRegion, deleteRegion } from '@api/region/region.controller';
-import checkCache from '@shared/middleware/cache.middleware';
-import { authenticateUser } from '@shared/middleware/auth.middleware';
-import { validate } from '@shared/middleware/validator.middleware';
-import { RegionSchema } from '@shared/schema/region.schema';
+import { createRegion, getAllRegions, getRegionById, updateRegion, deleteRegion } from '../region/region.controller';
+import checkCache from '../../shared/middleware/cache.middleware';
+import { authenticateUser } from '../../shared/middleware/auth.middleware';
+import { validate } from '../../shared/middleware/validator.middleware';
+import { RegionSchema } from '../../shared/schema/region.schema';
 
 const regionRouter = Router();
 

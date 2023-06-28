@@ -12,12 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 /* eslint-disable indent */
 const http_1 = __importDefault(require("http"));
-const app_1 = __importDefault(require("@src/app"));
-const logger_1 = __importDefault(require("@shared/utils/logger"));
-const db_1 = require("@shared/utils/db");
-const index_1 = __importDefault(require("@config/index"));
+const app_1 = __importDefault(require("./src/app"));
+const logger_1 = __importDefault(require("./src/shared/utils/logger"));
+const db_1 = require("./src/shared/utils/db");
+const index_1 = __importDefault(require("./config/index"));
 const server = http_1.default.createServer(app_1.default);
 const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
     try {

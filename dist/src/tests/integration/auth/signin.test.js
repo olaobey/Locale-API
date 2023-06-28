@@ -12,16 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/extensions */
 /* eslint-disable prefer-const */
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 /* eslint-disable import/no-extraneous-dependencies */
 const supertest_1 = __importDefault(require("supertest"));
-const app_1 = __importDefault(require("@src/app"));
-const jest_setup_1 = require("@src/tests/jest.setup");
-const jest_teardown_1 = __importDefault(require("@src/tests/jest.teardown"));
-const apiKey_service_1 = require("@src/service/apiKey.service");
-const user_model_1 = require("@models/user.model"); // Assuming the UserModel import path is correct
+const app_1 = __importDefault(require("../../../app"));
+const jest_setup_1 = require("../../jest.setup");
+const jest_teardown_1 = __importDefault(require("../../jest.teardown"));
+const apiKey_service_1 = require("../../../service/apiKey.service");
+const user_model_1 = require("../../../models/user.model"); // Assuming the UserModel import path is correct
 // our global object for storing auth information
 let auth = {};
 // before each request, create a user and log them in

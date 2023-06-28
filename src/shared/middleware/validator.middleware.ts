@@ -1,8 +1,10 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
 import { Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
-import APIError from '@shared/utils/errors';
+import APIError from '../../shared/utils/errors';
 
 export const validate = (schema: z.Schema, _in: 'body' | 'params' | 'query') => {
     return (req: Request, _res: Response, next: NextFunction) => {

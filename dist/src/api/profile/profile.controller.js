@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteProfile = exports.getProfileById = exports.updateProfile = void 0;
-const user_model_1 = require("@src/models/user.model");
-const redis_client_1 = require("@shared/utils/redis.client");
+const user_model_1 = require("../../models/user.model");
+const redis_client_1 = require("../../shared/utils/redis.client");
 const updateProfile = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.params.id;
     if (!userId) {

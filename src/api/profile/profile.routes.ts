@@ -1,7 +1,9 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 import { Router } from 'express';
-import { updateProfile, getProfileById, deleteProfile } from '@api/profile/profile.controller';
-import checkCache from '@shared/middleware/cache.middleware';
-import { authenticateUser } from '@shared/middleware/auth.middleware';
+import { updateProfile, getProfileById, deleteProfile } from '../profile/profile.controller';
+import checkCache from '../../shared/middleware/cache.middleware';
+import { authenticateUser } from '../../shared/middleware/auth.middleware';
 
 const profileRouter = Router();
 

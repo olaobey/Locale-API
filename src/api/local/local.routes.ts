@@ -1,10 +1,13 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/order */
 import { Router } from 'express';
-
-import { createLga, getAllLgas, updateLga, getLgaById, deleteLga } from '@api/local/local.controller';
-import checkCache from '@shared/middleware/cache.middleware';
-import { authenticateUser } from '@shared/middleware/auth.middleware';
-import { validate } from '@shared/middleware/validator.middleware';
-import { LgaSchema } from '@shared/schema/local.schema';
+import { createLga, getAllLgas, updateLga, getLgaById, deleteLga } from '../local/local.controller';
+import checkCache from '../../shared/middleware/cache.middleware';
+import { authenticateUser } from '../../shared/middleware/auth.middleware';
+import { validate } from '../../shared/middleware/validator.middleware';
+import { LgaSchema } from '../../shared/schema/local.schema';
 
 const lgaRouter = Router();
 

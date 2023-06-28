@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint-disable object-shorthand */
 /* eslint-disable consistent-return */
 /* eslint-disable indent */
 // src/middleware/authMiddleware.ts
 
 import { Request, Response, NextFunction } from 'express';
-import { UserModel, IUser } from '@src/models/user.model';
+import { UserModel, IUser } from '../../models/user.model';
 
 interface AuthenticatedRequest extends Request {
     user?: IUser;

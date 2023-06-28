@@ -1,12 +1,14 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable indent */
 import express from 'express';
 import dotenv from 'dotenv';
 import pinoHTTP from 'pino-http';
 import cors from 'cors';
-import routers from '@src/routes/index';
-import logger from '@shared/utils/logger';
-import { generalError } from '@shared/middleware/errors.middleware';
-import { CORS_WHITELISTS } from '@config/index';
+import routers from '../src/routes/index';
+import logger from '../src/shared/utils/logger';
+import { generalError } from '../src/shared/middleware/errors.middleware';
+import { CORS_WHITELISTS } from '../config/index';
 
 dotenv.config();
 

@@ -1,11 +1,13 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 /* eslint-disable object-shorthand */
 /* eslint-disable consistent-return */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable indent */
 import { Request, Response, NextFunction } from 'express';
-import { UserModel, IUser } from '@src/models/user.model';
+import { UserModel, IUser } from '../../models/user.model';
 import bcrypt from 'bcrypt';
-import { generateAPIKey } from '@src/service/apiKey.service';
+import { generateAPIKey } from '../../service/apiKey.service';
 
 export const signup = async (req: Request, res: Response, next: NextFunction) => {
     const { username, email, password } = req.body;

@@ -3,10 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
-const errors_1 = __importDefault(require("@shared/utils/errors"));
+const errors_1 = __importDefault(require("../../shared/utils/errors"));
 describe('APIError', () => {
     describe('notFound', () => {
         it('should create a not found error with status 404', () => {

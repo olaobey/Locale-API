@@ -3,11 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
-const error_logger_1 = require("@shared/middleware/error.logger");
+const error_logger_1 = require("../../shared/middleware/error.logger");
 const loginLimiterOptions = {
     windowMs: 60 * 1000,
     max: 5,

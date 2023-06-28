@@ -3,10 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 const express_1 = require("express");
-const state_controller_1 = require("@api/state/state.controller");
-const cache_middleware_1 = __importDefault(require("@shared/middleware/cache.middleware"));
-const auth_middleware_1 = require("@shared/middleware/auth.middleware");
+const state_controller_1 = require("../state/state.controller");
+const cache_middleware_1 = __importDefault(require("../../shared/middleware/cache.middleware"));
+const auth_middleware_1 = require("../../shared/middleware/auth.middleware");
 // import { validate } from '@shared/middleware/validator.middleware';
 // import { StateSchema } from '@shared/schema/state.schema';
 const stateRouter = (0, express_1.Router)();

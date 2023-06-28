@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/extensions */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-dupe-keys */
@@ -11,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable indent */
 const pino_1 = __importDefault(require("pino"));
 const express_pino_logger_1 = __importDefault(require("express-pino-logger"));
-const index_1 = __importDefault(require("@config/index"));
+const index_1 = __importDefault(require("../../../config/index"));
 const basicPinoLoggerOptions = {
     level: index_1.default.PINO_LOG_LEVEL || 'info',
     timestamp: true,

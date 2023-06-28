@@ -13,6 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.del = exports.get = exports.saveWithTtl = exports.redisClient = void 0;
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
@@ -21,8 +23,8 @@ exports.del = exports.get = exports.saveWithTtl = exports.redisClient = void 0;
 /* eslint-disable indent */
 const ioredis_1 = require("ioredis");
 const util_1 = require("util");
-const index_1 = __importDefault(require("@config/index"));
-const logger_1 = __importDefault(require("@shared/utils/logger"));
+const index_1 = __importDefault(require("../../../config/index"));
+const logger_1 = __importDefault(require("../../shared/utils/logger"));
 const redisClient = new ioredis_1.Redis({
     host: index_1.default.REDIS_LOCALHOST,
     port: index_1.default.REDIS_PORT,

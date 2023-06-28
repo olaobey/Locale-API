@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generalError = exports.notFound = void 0;
-const logger_1 = __importDefault(require("@shared/utils/logger"));
-const errors_1 = __importDefault(require("@shared/utils/errors"));
+const logger_1 = __importDefault(require("../../shared/utils/logger"));
+const errors_1 = __importDefault(require("../../shared/utils/errors"));
 const notFound = (req, res) => {
     logger_1.default.error({ url: req.url, method: req.method, query: req.query, params: req.params }, 'Route Not Found');
     res.status(404).json({ msg: 'Route Not Found' });

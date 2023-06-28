@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
-import APIError from '@shared/utils/errors';
+import APIError from '../../shared/utils/errors';
 
 describe('APIError', () => {
     describe('notFound', () => {

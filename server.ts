@@ -1,9 +1,11 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 /* eslint-disable indent */
 import http from 'http';
-import app from '@src/app';
-import logger from '@shared/utils/logger';
-import { connectDB } from '@shared/utils/db';
-import config from '@config/index';
+import app from './src/app';
+import logger from './src/shared/utils/logger';
+import { connectDB } from './src/shared/utils/db';
+import config from './config/index';
 
 const server = http.createServer(app);
 

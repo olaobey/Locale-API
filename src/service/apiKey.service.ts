@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
-import { UserModel } from '@src/models/user.model';
+import { UserModel } from '../models/user.model';
 
 export const generateAPIKey = async (
     userId: string,

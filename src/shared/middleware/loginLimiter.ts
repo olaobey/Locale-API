@@ -1,9 +1,11 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
 import rateLimit from 'express-rate-limit';
 import { Request, Response, NextFunction } from 'express';
-import { logEvents } from '@shared/middleware/error.logger';
+import { logEvents } from '../../shared/middleware/error.logger';
 
 const loginLimiterOptions = {
     windowMs: 60 * 1000, // 1 minute

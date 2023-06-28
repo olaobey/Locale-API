@@ -1,7 +1,9 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable indent */
 import { NextFunction, Request, Response } from 'express';
-import logger from '@shared/utils/logger';
-import APIError from '@shared/utils/errors';
+import logger from '../../shared/utils/logger';
+import APIError from '../../shared/utils/errors';
 
 export const notFound = (req: Request, res: Response) => {
     logger.error({ url: req.url, method: req.method, query: req.query, params: req.params }, 'Route Not Found');

@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-dupe-keys */
@@ -6,7 +7,7 @@
 /* eslint-disable indent */
 import pino, { LoggerOptions } from 'pino';
 import expressPinoLogger from 'express-pino-logger';
-import cleanEnv from '@config/index';
+import cleanEnv from '../../../config/index';
 
 const basicPinoLoggerOptions: LoggerOptions = {
     level: cleanEnv.PINO_LOG_LEVEL || 'info',

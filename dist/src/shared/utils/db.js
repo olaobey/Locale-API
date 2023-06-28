@@ -36,12 +36,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = exports.disconnectDB = void 0;
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable import/newline-after-import */
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 const mongoose_1 = __importStar(require("mongoose"));
-const db_1 = __importDefault(require("@config/db"));
-const logger_1 = __importDefault(require("@shared/utils/logger"));
+const db_1 = __importDefault(require("../../../config/db"));
+const logger_1 = __importDefault(require("../../shared/utils/logger"));
 const disconnectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         mongoose_1.default.set('strictQuery', true);

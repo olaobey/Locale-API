@@ -1,3 +1,5 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
@@ -6,8 +8,8 @@
 /* eslint-disable indent */
 import { Redis } from 'ioredis';
 import { promisify } from 'util';
-import cleanEnv from '@config/index';
-import logger from '@shared/utils/logger';
+import cleanEnv from '../../../config/index';
+import logger from '../../shared/utils/logger';
 
 const redisClient: Redis = new Redis({
     host: cleanEnv.REDIS_LOCALHOST,

@@ -13,11 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateAPIKey = void 0;
+/* eslint-disable import/extensions */
 /* eslint-disable indent */
 /* eslint-disable import/no-extraneous-dependencies */
 const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const user_model_1 = require("@src/models/user.model");
+const user_model_1 = require("../models/user.model");
 const generateAPIKey = (userId) => __awaiter(void 0, void 0, void 0, function* () {
     const key = (0, uuid_1.v4)().replace(/-/g, '');
     console.log("API key generated (won't be shown again):", key);

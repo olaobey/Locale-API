@@ -1,3 +1,5 @@
+/* eslint-disable import/order */
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
 /* eslint-disable object-shorthand */
@@ -5,9 +7,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable indent */
 import { Request, Response, NextFunction } from 'express';
-import { IState, StateModel } from '@models/state.model';
+import { IState, StateModel } from '../../models/state.model';
 import paginate from 'express-paginate';
-import { saveWithTtl, get, del } from '@shared/utils/redis.client';
+import { saveWithTtl, get, del } from '../../shared/utils/redis.client';
 
 export const createState = async (req: Request, res: Response, next: NextFunction) => {
     const newStateData: IState = req.body;

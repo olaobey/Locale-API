@@ -1,9 +1,11 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 import { Router } from 'express';
-import authRouter from '@src/api/auth/auth.routes';
-import lgaRouter from '@src/api/local/local.routes';
-import profileRouter from '@src/api/profile/profile.routes';
-import regionRouter from '@src/api/region/region.routes';
-import stateRouter from '@src/api/state/state.routes';
+import authRouter from '../api/auth/auth.routes';
+import lgaRouter from '../api/local/local.routes';
+import profileRouter from '../api/profile/profile.routes';
+import regionRouter from '../api/region/region.routes';
+import stateRouter from '../api/state/state.routes';
 
 const router = Router();
 

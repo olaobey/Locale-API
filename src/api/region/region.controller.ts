@@ -1,3 +1,5 @@
+/* eslint-disable import/order */
+/* eslint-disable import/extensions */
 /* eslint-disable object-shorthand */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
@@ -7,9 +9,9 @@
 /* eslint-disable consistent-return */
 /* eslint-disable indent */
 import { Request, Response, NextFunction } from 'express';
-import { IRegion, RegionModel } from '@models/region.model';
+import { IRegion, RegionModel } from '../../models/region.model';
 import paginate from 'express-paginate';
-import { saveWithTtl, get, del } from '@shared/utils/redis.client';
+import { saveWithTtl, get, del } from '../../shared/utils/redis.client';
 
 export const createRegion = async (req: Request, res: Response, next: NextFunction) => {
     const regionData: IRegion = req.body;

@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteRegion = exports.updateRegion = exports.getRegionById = exports.getAllRegions = exports.createRegion = void 0;
-const region_model_1 = require("@models/region.model");
+const region_model_1 = require("../../models/region.model");
 const express_paginate_1 = __importDefault(require("express-paginate"));
-const redis_client_1 = require("@shared/utils/redis.client");
+const redis_client_1 = require("../../shared/utils/redis.client");
 const createRegion = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const regionData = req.body;
     if (!regionData) {

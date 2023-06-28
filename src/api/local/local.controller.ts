@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-unused-vars */
@@ -7,9 +9,9 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable indent */
 import { Request, Response, NextFunction } from 'express';
-import { ILga, LgaModel } from '@models/local.model';
+import { ILga, LgaModel } from '../../models/local.model';
 import paginate from 'express-paginate';
-import { saveWithTtl, get, del } from '@shared/utils/redis.client';
+import { saveWithTtl, get, del } from '../../shared/utils/redis.client';
 
 export const createLga = async (req: Request, res: Response, next: NextFunction) => {
     const lgaData: ILga = req.body;

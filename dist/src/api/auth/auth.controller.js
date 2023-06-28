@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logout = exports.signin = exports.signup = void 0;
-const user_model_1 = require("@src/models/user.model");
+const user_model_1 = require("../../models/user.model");
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const apiKey_service_1 = require("@src/service/apiKey.service");
+const apiKey_service_1 = require("../../service/apiKey.service");
 const signup = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, email, password } = req.body;
     if (!username && !email && !password) {

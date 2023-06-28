@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const redis_client_1 = require("@shared/utils/redis.client");
+const redis_client_1 = require("../../shared/utils/redis.client");
 const checkCache = (req, res, next) => {
     const { id } = req.params;
     // Create a Redis key based on the request parameters

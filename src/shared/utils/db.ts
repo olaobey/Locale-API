@@ -1,9 +1,11 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable import/extensions */
 /* eslint-disable import/newline-after-import */
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 import mongoose, { connect, disconnect } from 'mongoose';
-import config from '@config/db';
-import logger from '@shared/utils/logger';
+import config from '../../../config/db';
+import logger from '../../shared/utils/logger';
 
 export const disconnectDB = async () => {
     try {
