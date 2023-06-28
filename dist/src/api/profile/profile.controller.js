@@ -1,9 +1,18 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteProfile = exports.getProfileById = exports.updateProfile = void 0;
 const user_model_1 = require("@src/models/user.model");
 const redis_client_1 = require("@shared/utils/redis.client");
-const updateProfile = async (req, res, next) => {
+const updateProfile = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.params.id;
     if (!userId) {
         return res.status(404).json({
@@ -20,11 +29,11 @@ const updateProfile = async (req, res, next) => {
                 success: false,
             });
         }
-        const updatedUser = await user_model_1.UserModel.findByIdAndUpdate(userId, userData, { new: true });
+        const updatedUser = yield user_model_1.UserModel.findByIdAndUpdate(userId, userData, { new: true });
         if (!updatedUser) {
             return res.status(404).json({ message: 'User profile not found', success: false });
         }
-        await (0, redis_client_1.saveWithTtl)(cacheKey, updatedUser);
+        yield (0, redis_client_1.saveWithTtl)(cacheKey, updatedUser);
         res.json({
             data: updatedUser,
             message: 'User profile updated',
@@ -38,9 +47,9 @@ const updateProfile = async (req, res, next) => {
             success: false,
         }));
     }
-};
+});
 exports.updateProfile = updateProfile;
-const getProfileById = async (req, res, next) => {
+const getProfileById = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.params.id;
     if (!userId) {
         return res.status(404).json({
@@ -50,11 +59,11 @@ const getProfileById = async (req, res, next) => {
     }
     try {
         const cacheKey = `user:${userId}`;
-        const user = await user_model_1.UserModel.findById(userId);
+        const user = yield user_model_1.UserModel.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'User profile not found', success: false });
         }
-        const cachedUser = await (0, redis_client_1.get)(cacheKey);
+        const cachedUser = yield (0, redis_client_1.get)(cacheKey);
         if (cachedUser) {
             return res.json({ message: 'LGA cache data has been retrieved successfully', data: cachedUser, success: true });
         }
@@ -71,9 +80,9 @@ const getProfileById = async (req, res, next) => {
             success: false,
         }));
     }
-};
+});
 exports.getProfileById = getProfileById;
-const deleteProfile = async (req, res, next) => {
+const deleteProfile = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.params.id;
     if (!userId) {
         return res.status(404).json({
@@ -83,12 +92,12 @@ const deleteProfile = async (req, res, next) => {
     }
     try {
         const cacheKey = `user:${userId}`;
-        const userInfo = await user_model_1.UserModel.findById(userId);
+        const userInfo = yield user_model_1.UserModel.findById(userId);
         if (!userInfo) {
             return res.status(404).json({ error: 'User profile not found' });
         }
-        const deleteUserInfo = await userInfo.deleteOne();
-        await (0, redis_client_1.del)(cacheKey, userInfo);
+        const deleteUserInfo = yield userInfo.deleteOne();
+        yield (0, redis_client_1.del)(cacheKey, userInfo);
         const data = `LGA with '${deleteUserInfo.username}' and ID ${deleteUserInfo._id} deleted`;
         res.json({
             data,
@@ -100,5 +109,5 @@ const deleteProfile = async (req, res, next) => {
         console.error('Error deleting user profile:', error);
         return next(error);
     }
-};
+});
 exports.deleteProfile = deleteProfile;
