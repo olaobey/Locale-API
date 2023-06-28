@@ -19,6 +19,10 @@ To set up the development environment for the Locale API, follow these steps:
 2) Initialize a new Node.js project.
 3) Configure TypeScript for the project.
 
+# **Base_Url**
+
+[BASE_URL](https://locale-api-ywof.onrender.com/api/v1)
+
 ## **Folder structure**
 
 ```
